@@ -77,14 +77,14 @@ body{
 
 
 .newsFeedWrapper{
-  width: 85%;
+  width: 75%;
   display: inline-block;
   margin-top: 20px;
   
 }
 
 .topArtistWrapper{
-  width: 15%;
+  width: 25%;
   display: inline-block;
   margin-top: 20px;
   position: absolute;
@@ -98,13 +98,17 @@ body{
 .list-group-item{
   border-color: #eaeef1;
   position: relative;
-  display: block;
+  display: flex;
   padding: 10px 15px;
   margin-bottom: -1px;
 
   background-color: #fff;
   box-shadow: 0px 1px 2px rgba(0,0,0,0.15);
   
+}
+
+.list-group-item h4{
+  margin-left:15px;
 }
 
 .list-group-lg .list-group-item {
@@ -116,7 +120,7 @@ body{
 
 
 .titleWrapper{
-  padding-right: 75px;
+  padding-right: 50px;
   z-index: 9999;
   position: relative;
 }
@@ -136,7 +140,7 @@ body{
 
 .newsContent{
   background-color: #fff;
-  margin-right: 75px;
+  margin-right: 50px;
 
   margin-top: 0px;
   z-index: 0;
@@ -146,8 +150,11 @@ body{
   margin-left:10px;
   margin-right: 10px;
   margin-bottom: 15px;
+  display: flex;
   height: 155px;
-  background-color: grey;
+  background-color: #fff;
+  border:1px solid rgba(0,0,0,0.15);
+  border-radius: 3px;
 }
 .newsArticle:first-child{
   margin-top: 15px;
@@ -161,4 +168,177 @@ body{
   width: 250px;
   height: 100%;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,.1)
+}
+
+.newsDetail{
+  margin-left: 20px;
+  margin-top: 15px;
+  margin-bottom: auto;
+}
+.newsDetail a{
+  color: #1DB954;
+  font-size: 12px;
+}
+.newsDetail h2{
+  margin: 0;
+  margin-top: 5px;
+}
+.newsDetail p{
+  margin: 0;
+  font-size: 12px;
+  margin-top: 5px;
+}
+.login-link{
+  text-decoration: none;
+}
+.login{
+  background-color: rgb(29, 185, 84);
+  border: none;
+  color: white;
+  border-radius: 500px;
+  padding: 25px 48px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 18px;
+  margin: auto;
+  margin-top: 45px;
+  line-height: 0;
+  cursor: pointer;
+  text-decoration: none;
+  max-width: 180px;
+}
+.modal{
+  background-attachment:scroll;
+  background-clip:border-box;
+  background-color:rgba(0, 0, 0, 0.75);
+  background-image:none;
+  background-origin:padding-box;
+  background-position-x:0%;
+  background-position-y:0%;
+  background-repeat-x:;
+  background-repeat-y:;
+  background-size:auto;
+  bottom:0px;
+  box-sizing:border-box;
+  color:rgb(112, 127, 140);
+  display:block;
+  font-family:Roboto, sans-serif;
+  font-size:14px;
+  font-weight:400;
+  height:100%;
+  left:0px;
+  line-height:24px;
+  outline-color:rgb(112, 127, 140);
+  outline-style:none;
+  outline-width:0px;
+  overflow-x:auto;
+  overflow-y:auto;
+  position:fixed;
+  right:0px;
+  text-size-adjust:100%;
+  top:0px;
+  width:100%;
+  z-index:100000;
+  -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+
+}
+.modal-box{
+  animation-duration:0.4s;
+  animation-name:modalbox;
+  animation-timing-function:cubic-bezier(0, 0, 0.3, 1.6);
+  box-sizing:border-box;
+  color:rgb(112, 127, 140);
+  display:block;
+  font-family:Roboto, sans-serif;
+  font-size:14px;
+  font-weight:400;
+  height:358.75px;
+  line-height:24px;
+  margin:auto;
+  margin-top:100px;
+
+  max-width:720px;
+  position:relative;
+  text-size-adjust:100%;
+  width:720px;
+  z-index:100000;
+  -webkit-tap-highlight-color:rgba(0, 0, 0, 0)
+}
+
+.modal-header{
+  background-attachment:scroll;
+  background-clip:border-box;
+  background-color:rgb(255, 255, 255);
+  background-image:none;
+  background-origin:padding-box;
+  background-position-x:0%;
+  background-position-y:0%;
+  background-repeat-x:;
+  background-repeat-y:;
+  background-size:auto;
+  border-bottom-color:rgb(229, 229, 229);
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-top-left-radius:5px;
+  border-top-right-radius:5px;
+  box-sizing:border-box;
+  color:rgb(255, 255, 255);
+  display:block;
+  font-family:Roboto, sans-serif;
+  font-size:14px;
+  font-weight:400;
+  height:80px;
+  line-height:24px;
+  padding-bottom:0px;
+  padding-left:0px;
+  padding-right:0px;
+  padding-top:0px;
+  text-size-adjust:100%;
+  width:720px;
+  -webkit-tap-highlight-color:rgba(0, 0, 0, 0)
+}
+
+.modal-body{
+  background-attachment:scroll;
+background-clip:border-box;
+background-color:rgb(255, 255, 255);
+background-image:none;
+background-origin:padding-box;
+background-position-x:0%;
+background-position-y:0%;
+background-repeat-x:;
+background-repeat-y:;
+background-size:auto;
+border-bottom-left-radius:5px;
+border-bottom-right-radius:5px;
+box-sizing:border-box;
+color:rgb(112, 127, 140);
+display:block;
+font-family:Roboto, sans-serif;
+font-size:14px;
+font-weight:400;
+height:215px;
+line-height:24px;
+padding-bottom:20px;
+padding-left:10px;
+padding-right:10px;
+padding-top:20px;
+position:relative;
+text-size-adjust:100%;
+width:720px;
+-webkit-tap-highlight-color:rgba(0, 0, 0, 0)
+}
+
+.modal-header .logo{
+  text-align: center;
+  margin: auto;
+  float: none;
+  padding-top: 25px;
+  font-size: 40px;
+}
+
+.artistImage{
+  width: 63px;
+  height: 63px;
 }
