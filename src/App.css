@@ -342,3 +342,11 @@ width:720px;
   width: 63px;
   height: 63px;
 }
+a{
+  text-decoration: none;
+  color: #333;
+}
+
+.newsImageDiv{
+  widows: 250px;
+}

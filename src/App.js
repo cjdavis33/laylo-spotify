@@ -21,7 +21,8 @@ class App extends Component {
     super();
     this.state = {
       token: null,
-      artists: []
+      artists: [],
+      news: [],
     }
     this.getTopArtists = this.getTopArtists.bind(this);
   };
@@ -54,7 +55,6 @@ class App extends Component {
         xhr.setRequestHeader("Authorization", "Bearer " + token);
       },
       success: (data) => {
-        console.log(data);
         var artistsArr = data.items;
         var artistsFinalArr = []
         for (var i = 0; i < artistsArr.length; i++){
@@ -65,11 +65,49 @@ class App extends Component {
             this.setState({
               artists: artistsFinalArr
             });
+            this.getNews();
           }
-          
         }
       }
     });
+  }
+
+  getNews(){
+    var finalNewsArr = [];
+    for (var i = 0; i < this.state.artists.length; i++){
+      var artistName = this.state.artists[i]["name"];
+      
+      $.ajax({
+        url: "https://newsapi.org/v2/everything?q="+artistName+"&apiKey=6251987a3807467ab715dc6dcf40f9e5&sortBy=popularity",
+        type: "GET",
+        success: (data) => {
+          var totalResults = data.totalResults;
+          if (totalResults > 0){
+            var title = data.articles[0].title;
+            var articleImage = data.articles[0].urlToImage;
+            var articleURL = data.articles[0].url;
+            var source = data.articles[0].source.name;
+            var author = data.articles[0].author;
+            var newObj = {title: title, image: articleImage, url: articleURL, source: source, author: author};
+            if (!finalNewsArr.includes(newObj)){
+              finalNewsArr.push(newObj);
+            }
+            
+            
+            
+          }
+          if (finalNewsArr.length > 0){
+            this.setState({
+              news: finalNewsArr
+            });
+          }
+          
+        }
+      });
+
+    }
+    
+      
   }
 
 
@@ -101,15 +139,25 @@ class App extends Component {
             <div class="titleWrapper"><h3>News Feed</h3></div>
             <div class="newsContent">
               <div class="spacer"></div>
-              <div class="newsArticle">
-                <img class="newsImage" src="http://via.placeholder.com/640x360"/>
-                <div class="newsDetail">
-                  <a>NY Times</a>
-                  <h2>Title title title title title</h2>
-                  <p>Kanye West</p>
-                </div>
-              </div>
-              <div class="newsArticle"></div>
+              {this.state.news.map(function(item, key){
+                if(item.image.length > 0){
+                  return (
+                    <a href={item.url}>
+                    <div class="newsArticle">
+                  
+                      <div class="newsImageDiv"><img class="newsImage" src={item.image}/></div>
+                      <div class="newsDetail">
+                        <a>{item.source}</a>
+                        <h2>{item.title}</h2>
+                        <p>{item.author}</p>
+                      </div>
+                    </div>
+                    </a>
+                  )
+                }
+                
+              })}
+              
             </div>
           </div>
           <div class="topArtistWrapper">
