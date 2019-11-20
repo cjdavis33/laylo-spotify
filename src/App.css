@@ -1,28 +1,164 @@
-.App {
+body{
+  background-color: rgb(243, 244, 248);
+  margin: 0;
+  color: #333;
+  font-family: sans-serif;
+}
+
+
+.container {
+  padding-left: 45px;
+  padding-right: 45px;
+  height: 100%;
+}
+.question-header{
   text-align: center;
+  margin-bottom: 25px;
+}
+.question-header h3{
+  font-size: 36px;
+    font-size: 2.25rem;
+    margin-top: 45px;
+    color: #333;
+    font-weight: 700;
+    font-family: sans-serif;
+}
+.returning-button-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.user-button{
+  height:200px;
+  width: 304px;
+  border: 1px solid #d9e1e6;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.horiz-spacer{
+  width: 20px;
+}
+.navigation{
+  height: 70px;
+  width: 100%;
+  background-color: #fff;
+
+}
+.navigation div{
+  padding-top: 20px;
+  padding-left: 15px;
+}
+.logo{
+  color: #333;
+  font-family: sans-serif;
+  font-size:25px;
+  margin: auto;
+  cursor: pointer;
+  float: left;
+}
+.logo span{
+  color: #1DB954;
+}
+.user-button{
+  margin: auto;
+  font-size: 20px;
+  text-align: center;;
+  font-family: sans-serif;
+  font-weight: 700;
+  color: #333;
+  cursor: pointer;
+}
+.user-button h3{
+  margin-top: 80px;
+}
+.user-button:hover{
+  background-color: rgb(235,235,235);
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+
+.newsFeedWrapper{
+  width: 85%;
+  display: inline-block;
+  margin-top: 20px;
+  
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.topArtistWrapper{
+  width: 15%;
+  display: inline-block;
+  margin-top: 20px;
+  position: absolute;
 }
 
-.App-title {
-  font-size: 1.5em;
+.list-group {
+  border-radius: 2px;
+
 }
 
-.App-intro {
-  font-size: large;
+.list-group-item{
+  border-color: #eaeef1;
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: -1px;
+
+  background-color: #fff;
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.15);
+  
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.list-group-lg .list-group-item {
+  padding-top: 15px;
+  border-bottom: 1px solid rgba(0,0,0,0.35);
+  padding-bottom: 15px;
+}
+
+
+
+.titleWrapper{
+  padding-right: 75px;
+  z-index: 9999;
+  position: relative;
+}
+.titleWrapper h3{
+  background-color: #fff;
+  line-height: 1.14;
+  margin-bottom: 0;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  padding: 15px 15px 18px;
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.15);
+}
+
+#artistsTitleWrapper{
+  padding-right: 0px;
+}
+
+.newsContent{
+  background-color: #fff;
+  margin-right: 75px;
+
+  margin-top: 0px;
+  z-index: 0;
+}
+
+.newsArticle{
+  margin-left:10px;
+  margin-right: 10px;
+  margin-bottom: 15px;
+  height: 155px;
+  background-color: grey;
+}
+.newsArticle:first-child{
+  margin-top: 15px;
+}
+.spacer{
+  height: 10px;
+  background-color: #fff;
+}
+
+.newsImage{
+  width: 250px;
+  height: 100%;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.1)
 }
